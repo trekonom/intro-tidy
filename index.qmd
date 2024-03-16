@@ -1,0 +1,11 @@
+---
+title: "Intro-tidy"
+format: revealjs
+engine: knitr
+execute: 
+  freeze: auto
+---
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.

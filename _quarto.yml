@@ -1,0 +1,23 @@
+project:
+  type: website
+
+website:
+  title: "Intro-tidy"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+filters:
+  - webr
+webr: 
+  show-startup-message: true
+  packages: ["ggplot2"]
+
