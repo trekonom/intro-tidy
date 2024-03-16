@@ -4,7 +4,7 @@
     "href": "index.html#why-should-we-care-about-the-tidyverse",
     "title": "Intro-tidy",
     "section": "Why should we care about the tidyverse?",
-    "text": "Why should we care about the tidyverse?\n\nWhat’s the mean of mpg (miles per gallon) and the number of observations by cyl (cylinders) in the mtcars dataset?\n\n\n\ntidyverse\n\nmtcars %&gt;%\n  group_by(cyl) %&gt;%\n  summarise(mean = mean(mpg), n = n())\n\n# A tibble: 3 × 3\n    cyl  mean     n\n  &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;\n1     4  26.7    11\n2     6  19.7     7\n3     8  15.1    14\n\n\n\nbase R\n\nmtcars_by &lt;- by(mtcars, mtcars$cyl, function(df) {\n  with(df, data.frame(\n    cyl = cyl[[1]],\n    mean = mean(mpg),\n    n = nrow(df)\n  ))\n})\ndo.call(rbind, mtcars_by)\n\n  cyl     mean  n\n4   4 26.66364 11\n6   6 19.74286  7\n8   8 15.10000 14\n\n\n\n\n\n\n\n\n\n\n\n\nAdapted from dplyr base R"
+    "text": "Why should we care about the tidyverse?\n\nWhat’s the mean of mpg (miles per gallon) and the number of observations by cyl (cylinders) in the mtcars dataset?\n\n\n\ntidyverse\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\nbase R\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\n\n\n\n\nAdapted from dplyr base R"
   },
   {
     "objectID": "about.html",
