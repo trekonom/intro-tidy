@@ -7,6 +7,7 @@ execute:
 ---
 
 ```{r include=FALSE}
+#| context: setup
 library(ggplot2)
 library(dplyr)
 ```
@@ -25,9 +26,8 @@ library(dplyr)
 ::: {.column width="50%"}
 #### tidyverse
 ```{webr-r}
-#| echo: true
-mtcars %>%
-  group_by(cyl) %>%
+mtcars |> 
+  group_by(cyl) |> 
   summarise(mean = mean(mpg), n = n())
 ```
 :::
@@ -37,7 +37,6 @@ mtcars %>%
 #### base R
 
 ```{webr-r}
-#| echo: true
 mtcars_by <- by(mtcars, mtcars$cyl, function(df) {
   with(df, data.frame(
     cyl = cyl[[1]],
