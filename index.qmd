@@ -24,7 +24,7 @@ library(dplyr)
 
 ::: {.column width="50%"}
 #### tidyverse
-```{r}
+```{webr-r}
 #| echo: true
 mtcars %>%
   group_by(cyl) %>%
@@ -33,8 +33,10 @@ mtcars %>%
 :::
 
 ::: {.column width="50%"}
+
 #### base R
-```{r}
+
+```{webr-r}
 #| echo: true
 mtcars_by <- by(mtcars, mtcars$cyl, function(df) {
   with(df, data.frame(
