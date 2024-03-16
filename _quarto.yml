@@ -19,5 +19,5 @@ filters:
   - webr
 webr: 
   show-startup-message: true
-  packages: ["ggplot2"]
+  packages: ["ggplot2", "dplyr"]
 

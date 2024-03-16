@@ -6,12 +6,49 @@ execute:
   freeze: auto
 ---
 
-This is a webr-enabled code cell in a Quarto HTML document.
-
-```{r}
+```{r include=FALSE}
 library(ggplot2)
+library(dplyr)
 ```
 
-```{webr-r}
-ggplot()
+
+# tidyverse {background-color="aquamarine"}
+
+> The [tidyverse](https://www.tidyverse.org) is an opinionated collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures.
+
+## Why should we care about the tidyverse?
+
+> What's the mean of `mpg` (miles per gallon) and the number of observations by `cyl` (cylinders) in the `mtcars` dataset?
+
+::: columns
+
+::: {.column width="50%"}
+#### tidyverse
+```{r}
+#| echo: true
+mtcars %>%
+  group_by(cyl) %>%
+  summarise(mean = mean(mpg), n = n())
 ```
+:::
+
+::: {.column width="50%"}
+#### base R
+```{r}
+#| echo: true
+mtcars_by <- by(mtcars, mtcars$cyl, function(df) {
+  with(df, data.frame(
+    cyl = cyl[[1]],
+    mean = mean(mpg),
+    n = nrow(df)
+  ))
+})
+do.call(rbind, mtcars_by)
+```
+:::
+
+:::
+
+::: aside
+Adapted from [dplyr base R](https://dplyr.tidyverse.org/articles/base.html#summarise-reduce-multiple-values-down-to-a-single-value)
+:::
