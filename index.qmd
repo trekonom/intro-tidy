@@ -6,6 +6,12 @@ execute:
   freeze: auto
 ---
 
-This is a Quarto website.
+This is a webr-enabled code cell in a Quarto HTML document.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+```{r}
+library(ggplot2)
+```
+
+```{webr-r}
+ggplot()
+```
